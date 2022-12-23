@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myCal{
+            height: 350px;
+            width: 350px;
+            background-color: aquamarine;
+            padding: 10px;
+            position:relative;
+        }
+        .output{
+            line-height: 40px ;
+            background-color: wheat;
+            color: black;
+            height: 40px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            text-align: right;
+            font-family: monospace;
+            padding: 0 8px;
+        }
+        .btn{
+             width: 50px;
+             height: 50px;
+             padding: 7px;
+             margin: 3px;
+             background-color: azure;
+             text-align: center;
+             font-size: 1.5em;
+             cursor: pointer;
+             vertical-align: middle;
+             line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="myCal">
+
+    </div>
+    <div class="output"></div>
+        <input type="number" name="" id="" value="100">
+        <button type="button">Tip 1</button>
+        <button type="button">Tip 2</button>
+    
+    <script >
+        // const button = document.querySelector("button");
+        // console.log(button);
+        // button.innerHTML="hello";
+
+        const button = document.querySelectorAll("button");
+        const output = document.querySelector(".output"); // to access class we use dot 
+        
+        console.log(button[0]);
+        button[1].innerHTML="hello"; // here if we dont specify the index then it will return the nodelist obj and will not change the content.
+
+        button[1].addEventListener("click",function(){
+            const hello = document.querySelector("input");
+            console.log(hello.value *10.25);
+            let tip = (hello.value *10.25).toFixed(2);
+            // let temp = '<h2> You should tip Rs '+tip+' on Rs '+hello.value+' </h2>'
+            let temp = `<h2> You should tip Rs ${tip} on Rs ${hello.value} </h2>`
+            // output.innerText = "output";
+            output.innerHTML = temp;
+        })
+         
+        
+
+        
+    </script>
+</body>
+</html>
